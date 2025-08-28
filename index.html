@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador Pessoal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>organização</h1>
+        </header>
+
+        <main class="main-content">
+            <!-- Seção de Provas -->
+            <section class="section provas-section">
+                <h2>provas</h2>
+                <div class="items-container" id="provas-container">
+                    <div class="item">
+                        <input type="checkbox" id="prova1" class="checkbox">
+                        <label for="prova1" class="item-content">
+                            <span class="date">08/09</span>
+                            <span class="description">prova de matemática</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addProva()">+ Adicionar Prova</button>
+            </section>
+
+            <!-- Seção de Metas -->
+            <section class="section metas-section">
+                <h2>metas</h2>
+                <div class="items-container" id="metas-container">
+                    <div class="item">
+                        <input type="checkbox" id="meta1" class="checkbox">
+                        <label for="meta1" class="item-content">
+                            <span class="description">aprender inglês</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addMeta()">+ Adicionar Meta</button>
+            </section>
+
+            <!-- Seção do Calendário -->
+            <section class="section calendario-section">
+                <h2>calendário</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="day-header">segunda</div>
+                        <div class="day-header">terça</div>
+                        <div class="day-header">quarta</div>
+                        <div class="day-header">quinta</div>
+                        <div class="day-header">sexta</div>
+                        <div class="day-header">sábado</div>
+                        <div class="day-header">domingo</div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Horários serão gerados dinamicamente -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para adicionar eventos no calendário -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Adicionar Evento</h3>
+            <form id="event-form">
+                <input type="text" id="event-title" placeholder="Título do evento" required>
+                <input type="time" id="event-time" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
